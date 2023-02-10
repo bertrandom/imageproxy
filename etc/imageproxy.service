@@ -2,10 +2,13 @@
 Description=Image Proxy
 
 [Service]
-User=www-data
-ExecStart=/usr/local/bin/imageproxy \
-    -addr localhost:4593 \
-    -cache memory -cache /var/cache/imageproxy 
+User=web
+ExecStart=/home/web/bin/imageproxy \
+    -override-cache-control="public" \
+    -override-expires="Sat, 28 Dec 2199 04:09:32 GMT" \
+    -addr localhost:7003 \
+    -allowHosts *.windows.net,httpbin.bert.org \
+    -cache /web/openai-image-cache/
 Restart=on-abort
 
 [Install]
