@@ -1,4 +1,4 @@
-module github.com/bertrandom/imageproxy
+module willnorris.com/go/imageproxy
 
 go 1.17
 
