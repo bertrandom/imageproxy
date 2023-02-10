@@ -128,6 +128,8 @@ func NewProxy(transport http.RoundTripper, cache Cache, overrideHeader map[strin
 
 	proxy.Client = client
 
+	proxy.HeaderOverrides = overrideHeader
+
 	return proxy
 }
 
